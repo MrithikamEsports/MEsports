@@ -54,13 +54,14 @@
 </head>
 <body>
   <div class="container">
+    <a href="index.html"><img src="images/logo.png" alt="Mrithikam Esports Logo" style="width: 100px; filter: drop-shadow(0 0 10px cyan); margin-bottom: 1.5rem;"></a>
     <h1>Select Your Time Slot</h1>
     <p>Please choose your slot for the tournament registration</p>
 
     <select id="timeSlotSelect">
       <option value="">-- Select a slot --</option>
-      <option value="28">28 May – 7:00 PM Solo</option>
-      <option value="29">29 May – 7:00 PM Solo</option>
+      <option value="28">28 May – 7:00 PM</option>
+      <option value="29">29 May – 7:00 PM</option>
     </select>
 
     <br><br>
@@ -73,7 +74,7 @@
       const slot = document.getElementById("timeSlotSelect").value;
       const urls = {
         "28": "https://docs.google.com/forms/d/e/1FAIpQLSeqUVu2Ie1yvEPcoKJhIvhewvcFYhfnO9cl1iYMqEnedgdcyg/viewform?usp=pp_url&entry.123456789=28+May+7PM",
-        "29": "https://docs.google.com/forms/d/e/1FAIpQLScTeZWgjk7Gn93VvD8xpuBs2nNi4QywxZpvHwC20kl6v5uWRA/viewform?usp=dialog"
+        "29": "https://docs.google.com/forms/d/e/1FAIpQLSeqUVu2Ie1yvEPcoKJhIvhewvcFYhfnO9cl1iYMqEnedgdcyg/viewform?usp=pp_url&entry.123456789=29+May+7PM"
       };
 
       if (!slot) {
@@ -81,7 +82,7 @@
         return;
       }
 
-      window.location.href = urls[slot];
+      window.location.href = urls[slot]
     }
   </script>
 </body>
