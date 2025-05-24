@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Select Time Slot - Mrithikam Esports</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to bottom right, #000000, #0f0f2b);
+      color: #00ffff;
+      text-align: center;
+    }
+
+    .container {
+      padding: 4rem 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    select, button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      margin: 0.5rem;
+      border-radius: 8px;
+      border: none;
+    }
+
+    select {
+      width: 250px;
+    }
+
+    button {
+      background-color: #00ffff;
+      color: #000;
+      cursor: pointer;
+    }
+
+    button:hover {
+      box-shadow: 0 0 15px cyan;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html"><img src="images/logo.png" alt="Mrithikam Esports Logo" style="width: 100px; filter: drop-shadow(0 0 10px cyan); margin-bottom: 1.5rem;"></a>
+<h1 style="font-size: 3rem; margin-bottom: 0.5rem;">FREE FIRE Registration</h1>
+    <h1>Select Your Time Slot</h1>
+    <p>Please choose your slot for the tournament registration</p>
+
+    <select id="timeSlotSelect">
+      <option value="">-- Select a slot --</option>
+      <option value="28">25 May – 7:30 PM</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="submitSlot()">Continue to Form</button>
+  </div>
+
+  <script>
+    function submitSlot() {
+      const slot = document.getElementById("timeSlotSelect").value;
+      const urls = {
+        "28": "https://docs.google.com/forms/d/e/1FAIpQLSeqUVu2Ie1yvEPcoKJhIvhewvcFYhfnO9cl1iYMqEnedgdcyg/viewform?usp=pp_url&entry.123456789=28+May+7PM"
+      };
+
+      if (!slot) {
+        alert("Please select a time slot.");
+        return;
+      }
+
+      window.location.href = urls[slot]
+    }
+  </script>
+</body>
+</html>
